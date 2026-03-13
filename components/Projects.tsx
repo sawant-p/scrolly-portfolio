@@ -2,6 +2,7 @@
 
 import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const projects = [
   {
@@ -80,7 +81,12 @@ export default function Projects() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-black/5 dark:from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0" />
               
-              <img src={proj.image} alt={proj.title} className="absolute inset-0 w-full h-full object-cover opacity-10 dark:opacity-20 group-hover:opacity-20 dark:group-hover:opacity-30 transition-opacity duration-500 z-0 mix-blend-overlay" />
+              <Image 
+                src={proj.image} 
+                alt={proj.title} 
+                fill
+                className="absolute inset-0 w-full h-full object-cover opacity-10 dark:opacity-20 group-hover:opacity-20 dark:group-hover:opacity-30 transition-opacity duration-500 z-0 mix-blend-overlay" 
+              />
 
               <div className="relative z-10">
                 <p className="text-zinc-500 text-sm font-semibold tracking-widest uppercase mb-6 drop-shadow-sm dark:drop-shadow-md">
