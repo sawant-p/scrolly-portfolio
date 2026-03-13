@@ -27,53 +27,53 @@ export default function Overlay() {
   return (
     // Height equals Canvas scroll section
     <div ref={containerRef} className="absolute top-0 left-0 w-full pointer-events-none" style={{ height: "500vh" }}>
-      <div className="sticky top-0 w-full h-screen flex flex-col justify-center px-6 md:px-24">
+      <div className="sticky top-0 w-full h-screen flex flex-col justify-center px-6 md:px-24 overflow-hidden">
         
         {/* Section 1 - Center */}
         <motion.div 
           style={{ opacity: opacity1, y: y1 }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
         >
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-4 text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.8)]">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-none">
             Parth Sawant
           </h1>
-          <p className="text-xl md:text-3xl text-zinc-300 font-medium tracking-wide drop-shadow-md">
+          <p className="text-lg sm:text-2xl md:text-3xl text-zinc-300 font-medium tracking-wide drop-shadow-md">
             AI & Data Science Enthusiast.
           </p>
         </motion.div>
 
-        {/* Scroll Indicator (Same fade out window as Section 1) */}
+        {/* Scroll Indicator */}
         <motion.div 
           style={{ opacity: opacity1 }}
-          className="absolute bottom-12 left-0 right-0 flex justify-center items-center"
+          className="absolute bottom-10 left-0 right-0 flex justify-center items-center"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="flex flex-col items-center text-white/50"
+            className="flex flex-col items-center text-white/40"
           >
-            <span className="text-sm font-medium tracking-widest uppercase mb-2">Scroll To Explore</span>
-            <ChevronDown className="w-6 h-6" />
+            <span className="text-[10px] sm:text-xs font-medium tracking-[0.2em] uppercase mb-2">Scroll</span>
+            <ChevronDown className="w-5 h-5" />
           </motion.div>
         </motion.div>
 
-        {/* Section 2 - Left */}
+        {/* Section 2 - Left/Center mobile */}
         <motion.div 
           style={{ opacity: opacity2, y: y2 }}
-          className="absolute inset-0 flex flex-col items-start justify-center text-left max-w-2xl px-8"
+          className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-center md:text-left max-w-2xl px-8 mx-auto md:mx-0"
         >
-          <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight">
             I build intelligent<br />data solutions.
           </h2>
         </motion.div>
 
-        {/* Section 3 - Right */}
+        {/* Section 3 - Right/Center mobile */}
         <motion.div 
           style={{ opacity: opacity3, y: y3 }}
-          className="absolute inset-0 flex flex-col items-end justify-center text-right pr-8 lg:pr-32"
+          className="absolute inset-0 flex flex-col items-center md:items-end justify-center text-center md:text-right px-8 md:pr-32 mx-auto md:mx-0"
         >
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight">
               Bridging GenAI<br />and engineering.
             </h2>
           </div>

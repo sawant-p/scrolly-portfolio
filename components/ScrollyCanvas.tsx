@@ -44,21 +44,25 @@ export default function ScrollyCanvas() {
   const frameIndex = useTransform(scrollYProgress, [0, 1], [0, totalFrames - 1]);
 
   const renderFrame = (img: HTMLImageElement | undefined) => {
-    if (!canvasRef.current || !img) return;
+    if (!canvasRef.current || !img || !img.complete) return;
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Handle high DPI displays
-    const dpr = window.devicePixelRatio || 1;
-    if (canvas.width !== window.innerWidth * dpr || canvas.height !== window.innerHeight * dpr) {
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
+    const dpr = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
+    const targetWidth = window.innerWidth * dpr;
+    const targetHeight = window.innerHeight * dpr;
+
+    if (canvas.width !== targetWidth || canvas.height !== targetHeight) {
+      canvas.width = targetWidth;
+      canvas.height = targetHeight;
     }
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // We skip clearRect to prevent "black flashes" during load.
+    // Since we use cover logic, the image will always fill the canvas.
 
-    // Cover logic
+    // Cover logic (similar to object-fit: cover)
     const canvasRatio = canvas.width / canvas.height;
     const imgRatio = img.width / img.height;
     
@@ -68,9 +72,11 @@ export default function ScrollyCanvas() {
     let offsetY = 0;
 
     if (canvasRatio > imgRatio) {
+      // Canvas is wider than image
       drawHeight = canvas.width / imgRatio;
       offsetY = (canvas.height - drawHeight) / 2;
     } else {
+      // Canvas is taller than image (Mobile)
       drawWidth = canvas.height * imgRatio;
       offsetX = (canvas.width - drawWidth) / 2;
     }
