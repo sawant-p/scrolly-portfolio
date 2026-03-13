@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { ChevronDown } from "lucide-react";
 
 export default function Overlay() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -39,6 +40,21 @@ export default function Overlay() {
           <p className="text-xl md:text-3xl text-zinc-300 font-medium tracking-wide drop-shadow-md">
             AI & Data Science Enthusiast.
           </p>
+        </motion.div>
+
+        {/* Scroll Indicator (Same fade out window as Section 1) */}
+        <motion.div 
+          style={{ opacity: opacity1 }}
+          className="absolute bottom-12 left-0 right-0 flex justify-center items-center"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="flex flex-col items-center text-white/50"
+          >
+            <span className="text-sm font-medium tracking-widest uppercase mb-2">Scroll To Explore</span>
+            <ChevronDown className="w-6 h-6" />
+          </motion.div>
         </motion.div>
 
         {/* Section 2 - Left */}
