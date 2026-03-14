@@ -34,10 +34,10 @@ export default function Overlay() {
           style={{ opacity: opacity1, y: y1 }}
           className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
         >
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-black dark:text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-none transition-colors duration-300">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-4 text-foreground drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-none transition-colors duration-300">
             Parth Sawant
           </h1>
-          <p className="text-lg sm:text-2xl md:text-3xl text-black/80 dark:text-zinc-300 font-bold tracking-wide drop-shadow-md dark:drop-shadow-md transition-colors duration-300">
+          <p className="text-lg sm:text-2xl md:text-3xl text-zinc-700 dark:text-zinc-300 font-bold tracking-wide drop-shadow-sm dark:drop-shadow-md transition-colors duration-300">
             AI & Data Science Enthusiast.
           </p>
         </motion.div>
@@ -50,7 +50,7 @@ export default function Overlay() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-            className="flex flex-col items-center text-black/60 dark:text-white/40 transition-colors duration-300"
+            className="flex flex-col items-center text-zinc-700 dark:text-white/40 transition-colors duration-300"
           >
             <Mouse className="w-6 h-6 mb-2" strokeWidth={1.5} />
             <span className="text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase mb-1">Scroll</span>
@@ -63,7 +63,7 @@ export default function Overlay() {
           style={{ opacity: opacity2, y: y2 }}
           className="absolute inset-0 flex flex-col items-center md:items-start justify-center text-center md:text-left max-w-2xl px-8 mx-auto md:mx-0"
         >
-          <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-black dark:text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight transition-colors duration-300">
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-foreground drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight transition-colors duration-300">
             I build intelligent<br />data solutions.
           </h2>
         </motion.div>
@@ -74,7 +74,7 @@ export default function Overlay() {
           className="absolute inset-0 flex flex-col items-center md:items-end justify-center text-center md:text-right px-8 md:pr-32 mx-auto md:mx-0"
         >
           <div className="max-w-2xl">
-            <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-black dark:text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight transition-colors duration-300">
+            <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-foreground drop-shadow-md dark:drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] leading-tight transition-colors duration-300">
               Bridging GenAI<br />and engineering.
             </h2>
           </div>
