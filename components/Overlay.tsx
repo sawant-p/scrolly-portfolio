@@ -12,8 +12,8 @@ export default function Overlay() {
     offset: ["start start", "end end"]
   });
 
-  // Section 1: Fades in 0->5%, fades out 15->20%
-  const opacity1 = useTransform(scrollYProgress, [0, 0.05, 0.15, 0.20], [0, 1, 1, 0]);
+  // Section 1: Fully visible at top (0%), fades out 15->20%
+  const opacity1 = useTransform(scrollYProgress, [0, 0.15, 0.20], [1, 1, 0]);
   const y1 = useTransform(scrollYProgress, [0, 0.20], [0, -100]);
 
   // Section 2: Fades in 30->35%, fades out 45->50%
