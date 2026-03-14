@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import LocomotiveScrollProvider from "@/components/LocomotiveScrollProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +26,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ThemeToggle />
-          {children}
+          <LocomotiveScrollProvider>
+            <ThemeToggle />
+            {children}
+          </LocomotiveScrollProvider>
         </ThemeProvider>
       </body>
     </html>
