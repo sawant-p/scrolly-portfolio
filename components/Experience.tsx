@@ -54,6 +54,17 @@ export default function Experience() {
                 <li>Contributed to simulation projects modeling real-world processes to optimize performance.</li>
               </ul>
             </motion.div>
+
+            <motion.div variants={itemVariants} className="group relative">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <h4 className="text-3xl font-bold">Deepfake Detection (Research Paper)</h4>
+                <p className="text-zinc-500 font-medium whitespace-nowrap pt-2 md:pt-0">2023</p>
+              </div>
+              <p className="text-xl text-zinc-600 dark:text-zinc-400 font-semibold flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-zinc-800 dark:bg-zinc-200" />
+                University of Mumbai
+              </p>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -90,6 +101,37 @@ export default function Experience() {
                   {skill}
                 </motion.span>
               ))}
+            </div>
+          </motion.div>
+
+          <motion.div variants={containerVariants}>
+            <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-12 border-b border-black/10 dark:border-white/10 pb-6 uppercase text-zinc-900 dark:text-zinc-100">
+              Certifications
+            </h3>
+            <div className="flex flex-col gap-8">
+              <motion.div variants={itemVariants}>
+                <h4 className="text-2xl font-bold mb-3 leading-tight">Data Science (NACT Approved)</h4>
+                <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-2">SKY EDUCATION</p>
+                <div className="flex items-center justify-between text-zinc-500 text-base font-medium border-t border-black/5 dark:border-white/5 pt-4 mt-2">
+                  <span>2025</span>
+                </div>
+              </motion.div>
+              
+              <motion.div variants={itemVariants}>
+                <h4 className="text-2xl font-bold mb-3 leading-tight">Introduction to Prompt Engineering</h4>
+                <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-2">Simplilearn</p>
+                <div className="flex items-center justify-between text-zinc-500 text-base font-medium border-t border-black/5 dark:border-white/5 pt-4 mt-2">
+                  <span>2024</span>
+                </div>
+              </motion.div>
+
+              <motion.div variants={itemVariants}>
+                <h4 className="text-2xl font-bold mb-3 leading-tight">Advanced Python Certification</h4>
+                <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-2">Udemy</p>
+                <div className="flex items-center justify-between text-zinc-500 text-base font-medium border-t border-black/5 dark:border-white/5 pt-4 mt-2">
+                  <span>2023</span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </motion.div>
