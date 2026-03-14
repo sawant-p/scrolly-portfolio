@@ -127,11 +127,11 @@ export default function ScrollyCanvas() {
   }, [images, frameIndex]);
 
   return (
-    <div ref={containerRef} className="relative w-full bg-zinc-100 dark:bg-[#121212] transition-colors duration-300" style={{ height: "500vh" }}>
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-zinc-100 dark:bg-[#121212] transition-colors duration-300">
+    <div ref={containerRef} className="relative w-full bg-[#121212]" style={{ height: "500vh" }}>
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#121212]">
         <canvas
           ref={canvasRef}
-          className="h-full w-full object-cover block dark:invert-0 invert transition-all duration-300"
+          className="h-full w-full object-cover block"
         />
       </div>
     </div>
